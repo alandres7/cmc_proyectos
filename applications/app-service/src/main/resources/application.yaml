@@ -1,0 +1,44 @@
+application:
+  title: "Admin Usuarios"
+  description: "operaciones para manejo de usuarios en el sistema"
+  version: "1.0.0"
+management:
+  endpoints:
+    web:
+      base-path: "/actuator"
+      exposure:
+        include: "health"
+      path-mapping:
+        health: "health"
+server:
+  port: 8080
+spring:
+  application:
+    name: "ms_usuarios"
+  devtools:
+    add-properties: false
+    livereload:
+      enabled: true
+  h2:
+    console:
+      enabled: true
+      path: "/h2-console"
+      settings:
+        trace: true
+  jackson:
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: true
+  profiles:
+    include: h2
+  webflux:
+    base-path: "/ms-usuarios"
+  datasource:
+    url: "jdbc:h2:mem:admin_users"
+    username: "sa"
+    password: ""
+    driverClassName: "org.h2.Driver"
+  jpa:
+    databasePlatform: "org.hibernate.dialect.H2Dialect"
+    hibernate:
+      ddl-auto: create
+    show-sql: true

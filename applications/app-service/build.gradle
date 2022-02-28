@@ -1,0 +1,26 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+	implementation project( ':exception-handler-util')
+	implementation project( ':utils')
+	implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+	implementation project( ':jpa-repository')
+	implementation project( ':reactive-web')
+    implementation project(':model')
+    implementation project(':usecase')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    implementation 'com.zaxxer:HikariCP:3.4.3'
+    implementation 'org.springframework:spring-orm:5.3.14'
+    implementation 'com.h2database:h2:2.1.210'
+    implementation 'org.springframework.security:spring-security-crypto:5.6.1'
+    compile 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springdoc:springdoc-openapi-webflux-core:1.5.8'
+    implementation 'org.springdoc:springdoc-openapi-webflux-ui:1.5.8'
+    implementation 'org.springdoc:springdoc-openapi-data-rest:1.5.8'
+}
+
+task explodedJar(type: Copy) {
+    with jar
+    into "${buildDir}/exploded"
+}
