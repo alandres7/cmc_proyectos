@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "28a18064-4fa7-43b5-b597-6c601e9a1adf",
+		"name": "CMC USERS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": {\r\n        \"username\": \"test1\",\r\n        \"password\": \"12345678fF#\",\r\n        \"firstName\": \"test\",\r\n        \"lastName\": \"test2\",\r\n        \"firstSurname\": \"noTest\",\r\n        \"lastSurname\": \"noTest\",\r\n        \"email\": \"noTest@test.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": {\r\n        \"username\": \"test\",\r\n        \"firstName\": \"test\",\r\n        \"lastName\": \"test3\",\r\n        \"firstSurname\": \"noTest\",\r\n        \"lastSurname\": \"noTest\",\r\n        \"email\": \"noTest@test.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserPassword",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": {\r\n        \"currentPassword\": \"123\",\r\n        \"newPassword\": \"1234ru\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users/1/password",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users",
+						"1",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateUsername",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users/username/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users",
+						"username",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ms-usuarios/api/admin/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ms-usuarios",
+						"api",
+						"admin",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
